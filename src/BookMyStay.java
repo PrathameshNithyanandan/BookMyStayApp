@@ -1,16 +1,14 @@
-public class UseCase4RoomSearch {
-
+public class UseCase6RoomAllocationService {
 public static void main(String[] args) {
-Room singleRoom = new SingleRoom();
-Room doubleRoom = new DoubleRoom();
-Room suiteRoom = new SuiteRoom();
+BookingRequestQueue requestQueue=new BookingRequestQueue();
 
-RoomInventory inventory = new RoomInventory();
-RoomSearchService searchService = new RoomSearchService();
+requestQueue.addBookingRequest(new Reservation("Arun","Single"));
+requestQueue.addBookingRequest(new Reservation("Meena","Double"));
+requestQueue.addBookingRequest(new Reservation("Rahul","Suite"));
 
-System.out.println("Room Search");
-System.out.println();
+RoomInventory inventory=new RoomInventory();
+RoomAllocationService allocationService=new RoomAllocationService();
 
-searchService.searchAvailableRooms(inventory, singleRoom, doubleRoom, suiteRoom);
+allocationService.processBookingRequest(requestQueue,inventory);
 }
 }
