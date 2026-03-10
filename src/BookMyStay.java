@@ -1,22 +1,16 @@
-public class UseCase3InventorySetup {
+public class UseCase4RoomSearch {
+
 public static void main(String[] args) {
-RoomInventory inventory=new RoomInventory();
+Room singleRoom = new SingleRoom();
+Room doubleRoom = new DoubleRoom();
+Room suiteRoom = new SuiteRoom();
 
-System.out.println("Hotel Room Inventory");
+RoomInventory inventory = new RoomInventory();
+RoomSearchService searchService = new RoomSearchService();
+
+System.out.println("Room Search");
 System.out.println();
 
-System.out.println("Single Room:");
-inventory.displayRoomDetails("Single Room");
-System.out.println("Available: "+inventory.getAvailability("Single Room"));
-System.out.println();
-
-System.out.println("Double Room:");
-inventory.displayRoomDetails("Double Room");
-System.out.println("Available: "+inventory.getAvailability("Double Room"));
-System.out.println();
-
-System.out.println("Suite Room:");
-inventory.displayRoomDetails("Suite Room");
-System.out.println("Available: "+inventory.getAvailability("Suite Room"));
+searchService.searchAvailableRooms(inventory, singleRoom, doubleRoom, suiteRoom);
 }
 }
