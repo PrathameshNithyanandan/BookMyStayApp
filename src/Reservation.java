@@ -13,15 +13,7 @@ class Reservation {
         return reservationId;
     }
 
-    public String getGuestName() {
-        return guestName;
-    }
-
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public String toString() {
-        return "Reservation ID: " + reservationId + ", Guest: " + guestName + ", Room Type: " + roomType;
-    }
+public String getRoomType() {
+return roomType;
+}
 }
