@@ -1,4 +1,4 @@
-class BookingReportService {
+public class BookingReportService {
     public void showReport(List<Reservation> list) {
         System.out.println("Booking History Report");
         for (Reservation r : list) {
