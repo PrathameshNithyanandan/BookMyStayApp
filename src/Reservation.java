@@ -1,17 +1,27 @@
-public class Reservation {
-private String guestName;
-private String roomType;
+class Reservation {
+    private String reservationId;
+    private String guestName;
+    private String roomType;
 
-public Reservation(String guestName,String roomType) {
-this.guestName=guestName;
-this.roomType=roomType;
-}
+    public Reservation(String reservationId, String guestName, String roomType) {
+        this.reservationId = reservationId;
+        this.guestName = guestName;
+        this.roomType = roomType;
+    }
 
-public String getGuestName() {
-return guestName;
-}
+    public String getReservationId() {
+        return reservationId;
+    }
 
-public String getRoomType() {
-return roomType;
-}
+    public String getGuestName() {
+        return guestName;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public String toString() {
+        return "Reservation ID: " + reservationId + ", Guest: " + guestName + ", Room Type: " + roomType;
+    }
 }

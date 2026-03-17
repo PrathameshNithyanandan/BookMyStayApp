@@ -1,15 +1,13 @@
-public class UseCase7AddOnServiceSelection {
+
+public class UseCase8BookingHistoryReport {
     public static void main(String[] args) {
-        AddOnServiceManager m = new AddOnServiceManager();
+        BookingHistory h = new BookingHistory();
 
-        String reservationId = "Single-1";
+        h.addReservation(new Reservation("R101", "Arun", "Single"));
+        h.addReservation(new Reservation("R102", "Bala", "Double"));
+        h.addReservation(new Reservation("R103", "Charan", "Suite"));
 
-        m.addService(reservationId, new AddOnService("Breakfast", 500));
-        m.addService(reservationId, new AddOnService("Spa", 700));
-        m.addService(reservationId, new AddOnService("Airport Pickup", 300));
-
-        System.out.println("Add-On Service Selection");
-        System.out.println("Reservation ID: " + reservationId);
-        System.out.println("Total Add-On Cost: " + m.calculateTotalServiceCost(reservationId));
+        BookingReportService s = new BookingReportService();
+        s.showReport(h.getAllReservations());
     }
 }
