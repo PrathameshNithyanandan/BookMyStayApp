@@ -1,4 +1,4 @@
-class BookingHistory {
+public class BookingHistory {
     private List<Reservation> list;
     public BookingHistory() {
         list = new ArrayList<>();
