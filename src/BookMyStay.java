@@ -1,14 +1,13 @@
-public class UseCase6RoomAllocationService {
-public static void main(String[] args) {
-BookingRequestQueue requestQueue=new BookingRequestQueue();
 
-requestQueue.addBookingRequest(new Reservation("Arun","Single"));
-requestQueue.addBookingRequest(new Reservation("Meena","Double"));
-requestQueue.addBookingRequest(new Reservation("Rahul","Suite"));
+public class UseCase8BookingHistoryReport {
+    public static void main(String[] args) {
+        BookingHistory h = new BookingHistory();
 
-RoomInventory inventory=new RoomInventory();
-RoomAllocationService allocationService=new RoomAllocationService();
+        h.addReservation(new Reservation("R101", "Arun", "Single"));
+        h.addReservation(new Reservation("R102", "Bala", "Double"));
+        h.addReservation(new Reservation("R103", "Charan", "Suite"));
 
-allocationService.processBookingRequest(requestQueue,inventory);
-}
+        BookingReportService s = new BookingReportService();
+        s.showReport(h.getAllReservations());
+    }
 }
